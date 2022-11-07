@@ -18,45 +18,35 @@
 </head>
 <body>
     <div id="app">
-        <div>
-            {{ people[0].name }} {{ people[0].age }}
-        </div>
-        <div>
-            {{ people[1].name }} {{ people[1].age }}
-        </div>
-        <div>
-            {{ people[2].name }} {{ people[2].age }}
-        </div>
-        <div>
-            {{ people[3].name }} {{ people[3].age }}
-        </div>
-
-        <hr>
-
-        <div v-for="(person, index) in people" key="person.id">
-            {{ person.name }} {{ person.age }} {{ index }}
-        </div>
+        {{ name }} <br>
+        <button @click="changeText">Click</button>
+    </div>
+    <div id="app-1">
+        {{ name }} <br>
+        <button @click="changeText">Click</button>
     </div>
     <script>
         new Vue({
             el: '#app',
             data: {
-                people: [
-                    { id: 1, name : 'a', age: 20 },
-                    { id: 2, name : 'b', age: 21 },
-                    { id: 3, name : 'c', age: 22 },
-                    { id: 4, name : 'd', age: 23 },
-                    { id: 5, name : 'e', age: 24 },
-                    { id: 6, name : 'e', age: 25 },
-                ]
+                name: 'kcb'
             },
             methods: {
-                IncreaseNumber() {
-                    this.number++;
-                },
-                 toggle() {
-                    this.show = !this.show;
-                 }
+                changeText() {
+                    this.name = 'kcb updated';
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app-1',
+            data: {
+                name: 'kcb-clone'
+            },
+            methods: {
+                changeText() {
+                    this.name = 'kcb-clone updated';
+                }
             }
         })
     </script>
