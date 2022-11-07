@@ -26,26 +26,26 @@
         <button @click="changeText">Click</button>
     </div>
     <script>
-        new Vue({
+        const app = new Vue({
             el: '#app',
             data: {
                 name: 'kcb'
             },
             methods: {
                 changeText() {
-                    this.name = 'kcb updated';
+                    app1.name = 'kcb updated';
                 }
             }
         })
 
-        new Vue({
+        const app1 = new Vue({
             el: '#app-1',
             data: {
                 name: 'kcb-clone'
             },
             methods: {
                 changeText() {
-                    this.name = 'kcb-clone updated';
+                    app.name = 'kcb-clone updated';
                 }
             }
         })
