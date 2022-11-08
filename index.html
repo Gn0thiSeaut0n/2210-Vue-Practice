@@ -35,10 +35,15 @@
         <kcb-button></kcb-button>
     </div>
     <script>
+        Vue.component('hello-world', {
+            template: `<div>hello world</div>`
+        });
+
         Vue.component('kcb-button', {
             template: `
             <div>
                 {{ name }} <br>
+                <hello-world></hello-world>
                 <button @click="changeText">Click</button>
             </div>
             `,
@@ -54,8 +59,8 @@
             }
         });
 
-        // const app = new Vue({
-        //     el: '#app',
+        const app = new Vue({
+            el: '#app',
         //     data: {
         //         name: 'kcb'
         //     },
@@ -64,10 +69,10 @@
         //             this.name = 'kcb updated';
         //         }
         //     }
-        // })
+        })
 
-        // const app1 = new Vue({
-        //     el: '#app-1',
+        const app1 = new Vue({
+            el: '#app-1',
         //     data: {
         //         name: 'kcb'
         //     },
@@ -76,7 +81,7 @@
         //             this.name = 'kcb updated';
         //         }
         //     }
-        // })
+        })
     </script>
 </body>
 </html>
