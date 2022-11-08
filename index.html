@@ -25,21 +25,48 @@
 
         <kcb-button></kcb-button>
     </div>
-    <hr><hr>
-    <div id="app-1">
+    <!-- <hr><hr> -->
+    <!-- <div id="app-1"> -->
         <!-- {{ name }} <br>
         <button @click="changeText">Click</button>
 
         <hr> -->
 
-        <kcb-button></kcb-button>
-    </div>
+        <!-- <kcb-button></kcb-button> -->
+    <!-- </div> -->
     <script>
-        Vue.component('hello-world', {
-            template: `<div>hello world</div>`
-        });
+        // Vue.component('hello-world', {
+        //     template: `<div>hello world</div>`
+        // });
 
-        Vue.component('kcb-button', {
+        // Vue.component('kcb-button', {
+        //     template: `
+        //     <div>
+        //         {{ name }} <br>
+        //         <hello-world></hello-world>
+        //         <button @click="changeText">Click</button>
+        //     </div>
+        //     `,
+        //     data() {
+        //         return {
+        //             name: 'kcb'
+        //         }
+        //     },
+        //     methods: {
+        //         changeText() {
+        //             this.name = 'kcb updated';
+        //         }
+        //     }
+        // });
+
+        const HelloWorld = {
+            template: `<div>hello world</div>`
+        };
+
+        const KcbButton = {
+            components: {
+                'hello-world': HelloWorld
+            },
             template: `
             <div>
                 {{ name }} <br>
@@ -57,10 +84,13 @@
                     this.name = 'kcb updated';
                 }
             }
-        });
+        }
 
         const app = new Vue({
             el: '#app',
+            components: {
+                'kcb-button': KcbButton
+            }
         //     data: {
         //         name: 'kcb'
         //     },
@@ -71,8 +101,8 @@
         //     }
         })
 
-        const app1 = new Vue({
-            el: '#app-1',
+        // const app1 = new Vue({
+            // el: '#app-1',
         //     data: {
         //         name: 'kcb'
         //     },
@@ -81,7 +111,7 @@
         //             this.name = 'kcb updated';
         //         }
         //     }
-        })
+        // })
     </script>
 </body>
 </html>
