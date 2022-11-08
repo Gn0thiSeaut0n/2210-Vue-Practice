@@ -18,37 +18,65 @@
 </head>
 <body>
     <div id="app">
-        {{ name }} <br>
+        <!-- {{ name }} <br>
         <button @click="changeText">Click</button>
+
+        <hr> -->
+
+        <kcb-button></kcb-button>
     </div>
+    <hr><hr>
     <div id="app-1">
-        {{ name }} <br>
+        <!-- {{ name }} <br>
         <button @click="changeText">Click</button>
+
+        <hr> -->
+
+        <kcb-button></kcb-button>
     </div>
     <script>
-        const app = new Vue({
-            el: '#app',
-            data: {
-                name: 'kcb'
+        Vue.component('kcb-button', {
+            template: `
+            <div>
+                {{ name }} <br>
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+            data() {
+                return {
+                    name: 'kcb'
+                }
             },
             methods: {
                 changeText() {
-                    app1.name = 'kcb updated';
+                    this.name = 'kcb updated';
                 }
             }
-        })
+        });
 
-        const app1 = new Vue({
-            el: '#app-1',
-            data: {
-                name: 'kcb-clone'
-            },
-            methods: {
-                changeText() {
-                    app.name = 'kcb-clone updated';
-                }
-            }
-        })
+        // const app = new Vue({
+        //     el: '#app',
+        //     data: {
+        //         name: 'kcb'
+        //     },
+        //     methods: {
+        //         changeText() {
+        //             this.name = 'kcb updated';
+        //         }
+        //     }
+        // })
+
+        // const app1 = new Vue({
+        //     el: '#app-1',
+        //     data: {
+        //         name: 'kcb'
+        //     },
+        //     methods: {
+        //         changeText() {
+        //             this.name = 'kcb updated';
+        //         }
+        //     }
+        // })
     </script>
 </body>
 </html>
