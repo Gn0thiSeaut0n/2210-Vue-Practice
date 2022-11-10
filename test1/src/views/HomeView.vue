@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>This is Home page</h1>
-    <KcbCoder/>
+    <KcbCoder title="home title" name="Kcb Coder"/>
   </div>
 </template>
 
