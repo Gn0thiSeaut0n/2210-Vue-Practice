@@ -12,10 +12,5 @@ export default {
   components: {
     KcbCoder
   },
-  data() {
-    return {
-      title: 5
-    }
-  }
 }
 </script>
