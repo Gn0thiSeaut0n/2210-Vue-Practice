@@ -20,6 +20,30 @@
         name: ''
       }
     },
+    beforeCreate() {
+      console.log('breforeCreate', this.name);
+    },
+    created() {
+      console.log('created', this.name);
+    },
+    beforeMount() {
+      alert('beforeMount');
+    },
+    mounted() {
+      alert('mounted');
+    },
+    beforeUpdate() {
+      alert('beforeUpdate');
+    },
+    updated() {
+      alert('updated');
+    },
+    beforeDestroy() {
+      alert('beforeDestroy');
+    },
+    destroyed() {
+      alert('destroyed');
+    },
     methods: {
       updateName(name) {
         this.name = name;

@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1>{{ title }}</h1>
-        <p>{{ name }}</p><br>
-        <button @click="updateName">Change Name</button>
+        <p>header</p>
+        <slot name="header" :kcb="kcb"></slot>
+        <p>body</p>
+        <slot></slot>
+        <p>footer</p>
     </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
     },
     data() {
         return {
+            kcb: 'coder'
             // name: 'Kcb Coder',
         }
     },
