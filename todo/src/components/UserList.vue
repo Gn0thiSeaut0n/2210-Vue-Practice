@@ -8,20 +8,22 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
     created() {
         this.getUsers();
     },
     computed: {
-        users() {
-            return this.$store.state.users;
-        }
+        ...mapState(['users']),
+        // users() {
+        //     return this.$store.state.users;
+        // },
     },
     methods: {
-        getUsers() {
-            console.log(this.users);
-            this.$store.dispatch('getUsers');
-        }
+        ...mapActions(['getUsers'])
+        // getUsers() {
+        //     this.$store.dispatch('getUsers');
+        // }
     },
 }
 </script>
