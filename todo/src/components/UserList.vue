@@ -14,13 +14,19 @@ export default {
         this.getUsers();
     },
     computed: {
-        ...mapState(['users']),
+        ...mapState('user', ['users']),
+        // ...mapState('user',{
+        //     users: state => state.users
+        // }),
+        // ...mapState({
+        //     users: state => state.user.users
+        // }),
         // users() {
         //     return this.$store.state.users;
         // },
     },
     methods: {
-        ...mapActions(['getUsers'])
+        ...mapActions('user', ['getUsers'])
         // getUsers() {
         //     this.$store.dispatch('getUsers');
         // }
